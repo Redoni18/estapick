@@ -1,0 +1,31 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Listing {
+  id          String         @id @default(uuid())
+  title       String
+  description String
+  price       Float
+  city        String
+  bedrooms    Int
+  bathrooms   Int
+  area        Float
+  latitude    Float
+  longitude   Float
+  images      ListingImage[]
+  createdAt   DateTime       @default(now())
+}
+
+model ListingImage {
+  id        String   @id @default(uuid())
+  url       String
+  listingId String
+  listing   Listing  @relation(fields: [listingId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+}
