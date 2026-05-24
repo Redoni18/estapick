@@ -1,4 +1,4 @@
-# Estapick Real Estate Marketplace Take-Home
+# Estapick Real Estate
 
 This repository contains a full-stack real estate marketplace slice with a **NestJS API** backend and a **Next.js App Router** frontend, implementing interactive map search, real-time listings filters, coordinate bounding-box syncing, and a property detail view.
 
