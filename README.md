@@ -244,6 +244,8 @@ npm run test:e2e     # Boots AppModule against PostgreSQL (estapick_test databas
 2. **URL-synced filters**: Persist city / price / bedrooms / bbox in the URL (`useSearchParams`) so reviewers can share a deep link to a specific map view and the browser back button restores prior filter state.
 3. **Google Maps with city autocomplete**: Replace Leaflet with the Google Maps API and use Places Autocomplete for city search instead of the hardcoded city list — show suggestions as users type and let them pick a city from the dropdown.
 4. **Create listing UI**: Add a frontend form so users can submit new listings through the app, rather than relying on the `POST /api/v1/listings` endpoint alone.
+5. **User auth & profiles**: Add registration and login (e.g. JWT or session-based auth on the NestJS side, with a `User` model in Prisma), so users can authenticate and manage their own profile — saved searches, contact preferences, and listing ownership tied to an account instead of anonymous `POST` calls.
+6. **Global client state with Zustand**: Introduce Zustand for shared frontend state — auth session, filter/map preferences, and UI chrome — instead of prop-drilling and one-off hooks. Keeps the listings page interactive while giving auth and cross-route state a single, lightweight store.
 
 ---
 
